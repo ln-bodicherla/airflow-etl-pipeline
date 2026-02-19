@@ -1,0 +1,21 @@
+airflow:
+  schedule_interval: "@daily"
+  start_date: "2024-01-01"
+  retries: 2
+  retry_delay_minutes: 5
+
+paths:
+  bronze: "./data/bronze"
+  silver: "./data/silver"
+  gold: "./data/gold"
+  raw: "./data/raw"
+
+quality:
+  max_null_rate: 0.05
+  min_completeness: 0.95
+  max_duplicate_rate: 0.01
+
+notifications:
+  on_failure: true
+  on_success: false
+  email: "data-team@company.com"
